@@ -1,0 +1,15 @@
+{
+  "title": "Notethat",
+  "name": "notethat",
+  "version": "0.0.3",
+  "description": "is not bad",
+  "main": "index.js",
+  "author": "Oguzhan Coskun",
+  "engines": {
+    "firefox": ">=38.0a1"
+  },
+  "license": "GPL",
+  "keywords": [
+    "jetpack"
+  ]
+}
