@@ -1,7 +1,7 @@
 {
   "title": "Notethat",
   "name": "notethat",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "is not bad",
   "main": "index.js",
   "author": "Oguzhan Coskun",
@@ -11,5 +11,8 @@
   "license": "GPL",
   "keywords": [
     "notethat,note,bad"
-  ]
+  ],
+  "permissions": {
+        "multiprocess": true
+  }
 }
