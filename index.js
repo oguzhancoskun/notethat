@@ -20,3 +20,8 @@ var menuItem = contextMenu.Item({
          qui.get();
     }
 });
+
+var prefs = require("sdk/preferences/service");
+var name = "general.useragent.locale";
+prefs.get(name); // is equal to "chrome://global/locale/intl.properties"
+prefs.getLocalized(name) // is equal to "en-U
