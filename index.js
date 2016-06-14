@@ -21,7 +21,13 @@ var menuItem = contextMenu.Item({
     }
 });
 
-var prefs = require("sdk/preferences/service");
-var name = "general.useragent.locale";
-prefs.get(name); // is equal to "chrome://global/locale/intl.properties"
-prefs.getLocalized(name) // is equal to "en-U
+var prefSet = require("simple-prefs");
+var strPref = prefSet.prefs.stringPreference;
+
+function onPrefChange(prefName){
+  prefSet.prefs[prefName]
+
+}
+
+prefSet.on("username",onPrefChange);
+
