@@ -2,20 +2,21 @@ var contextMenu = require("sdk/context-menu");
 var tabs = require("sdk/tabs");
 
 var script = 'self.on("context", function(){'+
-             "    return 'Search MDN for \"'+window.getSelection().toString()+'\"';"+
+             "    return 'Notethat this';"+
              '});'+
              'self.on("click", function(){'+
              '   self.postMessage(window.getSelection().toString());'+
              '});';
 
-
 var menuItem = contextMenu.Item({
-    label: "Search on MDN",
+    label: "Notethat",
     context: contextMenu.SelectionContext(),
     contentScript: script,
     onMessage: function(selectionText){
-        var url = "https://google.com/search?btnI&q=site:developer.mozilla.org "+selectionText;
-        url = url.replace(" ", "+");
-        tabs.open(url);
+        var Request = require("sdk/request").Request;
+        var qui = Request({
+          url: "http://nt.zproc.org/hook.php?data="+selectionText,
+        });
+         qui.get();
     }
 });
