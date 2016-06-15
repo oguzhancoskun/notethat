@@ -1,5 +1,8 @@
 var contextMenu = require("sdk/context-menu");
 var tabs = require("sdk/tabs");
+var preferences = require("sdk/simple-prefs").prefs;
+
+
 
 var script = 'self.on("context", function(){'+
              "    return 'Notethat this';"+
@@ -12,22 +15,16 @@ var menuItem = contextMenu.Item({
     label: "Notethat",
     context: contextMenu.SelectionContext(),
     contentScript: script,
-    onMessage: function(selectionText){
+    onMessage: function(text){
         var Request = require("sdk/request").Request;
+        var key = require('sdk/simple-prefs').prefs['key'];
         var qui = Request({
-          url: "http://nt.zproc.org/hook.php?data="+selectionText,
+          url: "http://nt.zproc.org/hook.php?key="+key+"&data="+text,
         });
          qui.get();
     }
 });
 
-var prefSet = require("simple-prefs");
-var strPref = prefSet.prefs.stringPreference;
 
-function onPrefChange(prefName){
-  prefSet.prefs[prefName]
 
-}
-
-prefSet.on("username",onPrefChange);
 

@@ -19,13 +19,8 @@
   "preferences": [
     {
       "type": "string",
-      "name": "username",
-      "title": "username"
-    },
-    {
-      "type": "string",
-      "name": "password",
-      "title": "password"
+      "name": "key",
+      "title": "key"
     }
   ]
 }
