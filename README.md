@@ -5,9 +5,9 @@
 Notethat is simple 'note that' app. Now available on Firefox Add-ons.
 
 ###Planned Extensions
--Chrome Web Store
--KDE / Gnome Desktop Widget
--Android Widget
+*Chrome Web Store
+*KDE / Gnome Desktop Widget
+*Android Widget
 
 ##How To Use
 Login to https://nt.zproc.org
