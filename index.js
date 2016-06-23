@@ -1,7 +1,7 @@
 var contextMenu = require("sdk/context-menu");
 var tabs = require("sdk/tabs");
 var preferences = require("sdk/simple-prefs").prefs;
-
+var self = require("sdk/self");
 
 
 var script = 'self.on("context", function(){'+
@@ -15,6 +15,7 @@ var menuItem = contextMenu.Item({
     label: "Notethat",
     context: contextMenu.SelectionContext(),
     contentScript: script,
+    image: self.data.url("icon-16.png"),
     onMessage: function(text){
         var Request = require("sdk/request").Request;
         var key = require('sdk/simple-prefs').prefs['key'];
